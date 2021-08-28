@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,7 +35,7 @@ public class EventsPage extends BaseClass {
 		return eventstitle;
 	}
 	
-	@FindBy(xpath = "//a[text()='Automation1692 26-Aug-21']")
+	@FindBy(xpath = "//a[text()='Automation18 26-Jul-21']")
 	public WebElement event1;
 	
 	@FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-containedSizeSmall MuiButton-sizeSmall MuiButton-disableElevation']")
@@ -47,9 +46,6 @@ public class EventsPage extends BaseClass {
 
 	@FindBy(xpath = "//div[contains(text(),'Select Event Type')]")
 	public WebElement eventType;
-	
-	@FindBy(xpath = "//div[contains(text(),'Select Event Enclosure')]")
-	public WebElement eventClosure;
 
 	@FindBy(xpath = "//div[contains(text(),'ONE Series')]")
 	public WebElement one_Series;
@@ -57,23 +53,14 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//p[text()='ONE Series']")
 	public WebElement confirmEventType;
 	
-	@FindBy(xpath = "//div[contains(text(),'Cage')]")
-	public WebElement Cage;
-	
-	@FindBy(xpath = "//div[contains(text(),'Ring')]")
-	public WebElement Ring;
-	
 	@FindBy(xpath = "(//p[@class='MuiTypography-root MuiTypography-body1'])[1]")
 	public WebElement confirmEventname;
 
 	@FindBy(xpath = "//div[text()='Select Event Venue']")
 	public WebElement eventVenue;
 
-	@FindBy(xpath = "(//div[@class=' css-11ei81s-indicatorContainer'])[1]")
+	@FindBy(xpath = "//div[@class=' css-11ei81s-indicatorContainer']")
 	public WebElement deleteVenue;
-	
-	@FindBy(xpath = "(//div[@class=' css-11ei81s-indicatorContainer'])[2]")
-	public WebElement deleteclosure;
 
 	@FindBy(xpath = "//div[contains(text(),'Axiata Arena, Kuala Lumpur')]")
 	public WebElement axiata;
@@ -149,15 +136,7 @@ public class EventsPage extends BaseClass {
 
 	@FindBy(xpath = "//div[contains(text(),'Ritu  Phogat')]")
 	public WebElement rituPogat;
-	
-	@FindBy(xpath = "//div[contains(text(),'Neha Kashyap')]")
-	public WebElement NehaKashyap;
-	
-	@FindBy(xpath = "//div[contains(text(),'Asha R')]")
-	public WebElement AshaR;
 
-	
-	
 	@FindBy(xpath = "//div[contains(text(),'Adi Paryanto')]")
 	public WebElement adiParyanto;
 
@@ -172,10 +151,6 @@ public class EventsPage extends BaseClass {
 
 	@FindBy(xpath = "//div[contains(text(),'Adrian Mattheis')]")
 	public WebElement adrianMattheis;
-	
-	@FindBy(xpath = "//div[contains(text(),'TBA')]")
-	public WebElement TBA;
-
 
 	@FindBy(xpath = "//div[contains(text(),'Select Weightclass')]")
 	public WebElement weightclass;
@@ -204,8 +179,11 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//div[contains(text(),'Select Style')]")
 	public WebElement style;
 
-	@FindBy(xpath = "(//div[@class='MuiFormControl-root MuiFormControl-fullWidth'])[7]")
+	@FindBy(xpath = "//div[text()='Select Tags']")
 	public WebElement tags;
+
+	@FindBy(xpath = "//div[@class='css-xb97g8']")
+	public WebElement tagDelete;
 
 	@FindBy(xpath = "//div[contains(text(),'Mixed Martial Arts')]")
 	public WebElement mixedMartialArts;
@@ -219,10 +197,10 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//div[contains(text(),'Select Championship Type')]")
 	public WebElement selectchampionshipType;
 
-	//@FindBy(xpath = "//div[contains(text(),'Lightweight World Championship')]")
-	//public WebElement confirmLightweightWorldChampionship;
+	@FindBy(xpath = "//div[contains(text(),'Lightweight World Championship')]")
+	public WebElement confirmLightweightWorldChampionship;
 
-	@FindBy(xpath = "//div[contains(text(),'Laga Cadangan Flyweight World Grand Prix')]")
+	@FindBy(xpath = "//div[contains(text(),'Lightweight World Championship')]")
 	public WebElement semiFinalFeatherweightWorldGrandPrix;
 
 	@FindBy(xpath = "/html/body/div[4]/div[3]/div/div[2]/div/div[4]/div[2]/table/tbody/tr/td[2]/span/span[1]/span[1]/input")
@@ -235,7 +213,7 @@ public class EventsPage extends BaseClass {
 	public WebElement confirmType;
 
 	@FindBy(xpath = "//label[contains(text(),'Title')]")
-	public WebElement searchField;
+	public WebElement confirmClearFilter;
 
 	@FindBy(xpath = "//p[contains(text(),'Axiata Arena, Kuala Lumpur')]")
 	public WebElement confirmVenue;
@@ -243,7 +221,12 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//span[contains(text(),'UNCONFIRMED')]")
 	public WebElement unconfirmedtext;
 
-	
+	@FindBy(xpath = "//h6[contains(text(),'MAIN CARD (1 BOUTS, 1 UNCONFIRMED)')]")
+	public WebElement totalUnconfimedBouts;
+
+	@FindBy(xpath = "//h6[contains(text(),'MAIN CARD (1 BOUTS)')]")
+	public WebElement totalconfimedBouts;
+
 	@FindBy(xpath = "//span[contains(text(), 'Mark all as confirmed')]")
 	public WebElement confirmationMarkAllasconfirmed;
 
@@ -331,7 +314,7 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = " //button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation']")
 	public WebElement savechanges;
 
-	@FindBy(xpath = "//body[@id='tinymce']")
+	@FindBy(id = "tinymce")
 	public WebElement updatedescription;
 
 	@FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-containedSizeSmall MuiButton-sizeSmall MuiButton-disableElevation']")
@@ -441,8 +424,8 @@ public class EventsPage extends BaseClass {
 
 	@FindBy(xpath = "  //span[text()='Title']")
 	public WebElement detailConfirm;
-	//(//span[@class='MuiSwitch-root'])[1]
-	@FindBy(xpath = "//*[@id=\"root\"]/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/table/tbody/tr/td[2]/span/span[1]")
+
+	@FindBy(xpath = "(//span[@class='MuiSwitch-root'])[1]")
 	public WebElement hideEvent;
 
 	@FindBy(xpath = "(//span[@class='MuiSwitch-root'])[2]")
@@ -486,7 +469,7 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//p[text()='Featured Image']/../following-sibling::div/button[2]")
 	public WebElement deleteFeaturedImage;
 
-	@FindBy(xpath = "//th/a[contains(text(),'Fist')]")
+	@FindBy(xpath = "//th/a[contains(text(),'Automation')]")
 	public List<WebElement> searchResultsByName;
 
 	@FindBy(xpath = "//tr/td[text()='ONE Series']")
@@ -509,9 +492,6 @@ public class EventsPage extends BaseClass {
 	
 	@FindBy(xpath = "//*[text()='Event created successfully.']")
 	public WebElement confirmationPopupTextForEventCreation;
-	
-	@FindBy(xpath = "//*[text()='Event deleted successfully']")
-	public WebElement confirmationPopupTextForEventDeletion;
 
 	@FindBy(xpath = "//a[text()='Adi Paryanto']")
 	public WebElement fighthistoryAthlete1;
@@ -537,7 +517,7 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//p[text()='It’s ONE Championship’s biggest month in history, with four weeks of blockbuster events kicking off on 7 April with ONE on TNT .A massive flyweight battle takes place in the main event. After winning the grueling ONE Flyweight World Grand Prix, 12-time UFC World Champion Demetrious Johnson can cement his legacy as the greatest mixed martial artist of all time if he dethrones six-time ONE Flyweight World Champion Adriano Moraes, who promises to be the first man to finish “Mighty Mouse.Plus, four-time UFC and Bellator World Champion Eddie Alvarez battles to prove he belongs in the promotion after a rough start to his ONE Championship career, but standing in his way is dangerous #2 lightweight contender Iuri Lapicus.The rest of the stacked card features superstars such as ONE Flyweight Muay Thai World Champion Rodtang Jitmuangnon and heavyweight sensation Oumar Kane, so mark your calendars, check your local listings, and download the ONE Super App now!']")
 	public WebElement descriptionConfirmation;
 
-	@FindBy(xpath = "(//p[@class='MuiTypography-root MuiTypography-body1'])[5]")
+	@FindBy(xpath = "//p[text()='Cage']")
 	public WebElement enclosureConfirmation;
 
 	@FindBy(xpath = "(//div[@class=' css-11ei81s-indicatorContainer'])[2]")
@@ -606,7 +586,7 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//h2[text()='Notification Feed']")
 	public WebElement notificationFeed;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/div/div[1]/p/a")
+	@FindBy(xpath = "//a[text()='4']")
 	public WebElement versionNo1;
 
 	@FindBy(xpath = "//a[text()='5']")
@@ -726,19 +706,9 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//th/a")
 	public WebElement event;
 
-	
-	@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true'])[1]")
-	public WebElement eventbanner;
-	
 	@FindBy(xpath = "//span[text()='Publish To The Team']")
 	public WebElement publishToTeam;
-	
-	@FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained jss96 jss98 jss100 MuiButton-containedSecondary MuiButton-disableElevation Mui-disabled Mui-disabled']")
-	public WebElement publishToTeamBtn;
 
-	@FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-disableElevation Mui-disabled Mui-disabled']")
-	public WebElement publishToWorldBtn;
-	
 	@FindBy(xpath = "//span[text()='Publish To The World']")
 	public WebElement publishToWorld;
 
@@ -775,189 +745,6 @@ public class EventsPage extends BaseClass {
 	@FindBy(xpath = "//h2[text()='Adi Nugroho']")
 	public WebElement athletename;
 
-	@FindBy(xpath = "//div[text()='BR']")
-    public WebElement BR;
-   
-   @FindBy(xpath = "(//div[text()='Regular'])[2]")
-    public WebElement Regular;
-   
-   @FindBy(xpath = "//div[text()='No matching tag found.']")
-    public WebElement Nomatchfound;
-   
-   @FindBy(xpath = "//div[text()='TNT']")
-    public WebElement TNT;
-   
-   @FindBy(xpath = "(//div[@style='margin-left: 58px;'])[1]")
-    public WebElement tagcheck1;
-   
-   @FindBy(xpath = "(//div[@style='margin-left: 58px;'])[2]")
-    public WebElement tagcheck2;
-   
-   @FindBy(xpath = "(//div[@style='margin-left: 58px;'])[3]")
-    public WebElement tagcheck3;
- 
-   @FindBy(xpath = "(//div[@style='margin-left: 58px;'])[4]")
-    public WebElement tagcheck4;
-                   
-   @FindBy(xpath ="/html/body/div[4]/div[3]/div/div[2]/div/div[5]/div/table/tbody/tr/td[2]/div/div/div/div[1]/div[1]/div[2]")
-   public WebElement tagDelete;
-   
-   @FindBy(xpath= "//div[text()='Year']")
-   public WebElement year;
-
-
-   @FindBy(xpath="//div[contains(text(),'2019')]")
-   public WebElement year2019;
-
-   @FindBy(xpath="(//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 MuiGrid-grid-lg-2'])[5]")
-   public WebElement month;
-
-   @FindBy(xpath="//*[@id=\"root\"]/div[2]/main/div/div[3]/form/div/div/div[2]/div/div/div/div[2]/div[1]")
-   public WebElement cancelshowfilter;
-
-  @FindBy(xpath="//*[@id=\"root\"]/div[2]/main/div/div[3]/form/div/div/div[3]/div/div/div/div[2]")
-  public WebElement cancelvenuefilter;
-
-
-  @FindBy(xpath="//*[@id=\"root\"]/div[2]/main/div/div[3]/form/div/div/div[4]/div/div/div/div[2]/div[1]")
-  public WebElement cancelyearfilter;
-
-       @FindBy(xpath="//tr[1]/td[1]/*[@title='Not visible on app and website']")
-       public WebElement notVisibleOnAppStatusIcon;
-
-        @FindBy(xpath = "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-center']")
-	    public WebElement titleHeader;
-	    
-	    @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[1]")
-	    public WebElement eventNoHeader;
-	    @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[2]")
-	    public WebElement showtypeHeader;
-	    @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[3]")
-	    public WebElement dateHeader;
-	    @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[4]")
-	    public WebElement venueHeader;
-	  
-        @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[5]")
-	    public WebElement publishtoteamHeader;
-	    @FindBy(xpath = "(//th[@class='MuiTableCell-root MuiTableCell-head'])[6]")
-	    public WebElement publishtoworldHeader;
-	  
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[1]")
-	    public WebElement nickname;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[2]")
-	    public WebElement gym;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[3]")
-	    public WebElement Weightclass;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[4]")
-	    public WebElement weight;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[5]")
-	    public WebElement height;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[6]")
-	    public WebElement age;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[7]")
-	    public WebElement dob;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[8]")
-	    public WebElement country;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[9]")
-	    public WebElement recordtype;
-	    @FindBy(xpath = "(//span[@class='MuiTypography-root MuiTypography-caption'])[10]")
-	    public WebElement record;
-	    
-	    @FindBy(xpath = "(//span[@class='MuiIconButton-label'])[4]")
-	    public WebElement expand; 
-	    
-	    @FindBy(xpath = "(//h6[@class='MuiTypography-root MuiTypography-h6 MuiTypography-displayBlock'])[1]")
-	    public WebElement Noofmaincards;
-	    
-	    @FindBy(xpath = "//h6[text()='MAIN CARD (1 BOUTS)']")
-	    public WebElement Noofmaincards1;
-	    
-	    
-	    @FindBy(xpath = "(//h6[@class='MuiTypography-root MuiTypography-h6 MuiTypography-displayBlock'])[2]")
-	    public WebElement Noofleadcards;
-	    
-	    @FindBy(xpath = "(//h6[@class='MuiTypography-root MuiTypography-h6'])[1]")
-	    public WebElement Noofcards;
-
-	    @FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit MuiButton-disableElevation']")
-		public WebElement localeselection;
-	    
-		@FindBy(xpath = "//li[text()='Hindi']")
-		public WebElement hindiLocale;
-		
-		@FindBy(xpath = "//li[text()='Bahasa']")
-		public WebElement bahasaLocale;
-		
-		@FindBy(xpath = "//li[text()='English']")
-		public WebElement englishLocale;
-		
-		@FindBy(xpath = "//li[text()='Khmer']")
-		public WebElement khmerLocale;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[1]")
-		public WebElement Red1;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[2]")
-		public WebElement Red2;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[3]")
-		public WebElement Red3;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[4]")
-		public WebElement Red4;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[1]")
-		public WebElement Blue1;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[2]")
-		public WebElement Blue2;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[3]")
-		public WebElement Blue3;
-		
-		@FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row-reverse MuiGrid-wrap-xs-nowrap MuiGrid-align-items-xs-flex-end MuiGrid-justify-xs-flex-end'])[4]")
-		public WebElement Blue4;
-		
-		@FindBy(xpath = "//div[@class='jss567 jss569']")
-		public WebElement publishtoworld;
-		
-		@FindBy(xpath = "//image[@src='/static/media/event-publish-block-screen-loader.25c7cb04.gif\']")
-		public WebElement publishtoteam;
-		
-		 @FindBy(xpath = "//span[text()='Delete']")
-		 public WebElement deleteBtn;
-		 
-		 @FindBy(xpath = "//p[text()='Permanently delete this event?']")
-		 public WebElement deleteText;
-		 
-		 @FindBy(xpath = "//a[@class='MuiButtonBase-root MuiButton-root MuiButton-contained jss123 MuiButton-disableElevation Mui-disabled Mui-disabled']")
-		 public WebElement deleteTexts;
-		    
-		
-		    @FindBy(xpath = "//span[text()='This Action Cannot Be Undone']")
-		    public WebElement deletepopup;
-		    
-		    @FindBy(xpath = " //button[text()='Delete Permanently']")
-		    public WebElement deletepermanently;
-		    
-		    @FindBy(xpath = " //button[text()='Cancel']")
-		    public WebElement cancelDeleteEvent;
-		    
-		    @FindBy(xpath = "/html/body/div[4]/div[3]/div/div[2]/div[2]/div[1]/span/span[1]/input")
-		    public WebElement select;
-		    
-		    @FindBy(xpath = "//span[@class='MuiButtonBase-root MuiIconButton-root jss131 MuiCheckbox-root MuiCheckbox-colorSecondary jss132 Mui-checked MuiIconButton-colorSecondary']")
-		    public WebElement selected;
-		  
-		    @FindBy(xpath = "//span[@id='client-snackbar']")
-		    public WebElement deletesuccessful;
-		    
-		    @FindBy(xpath = "(//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center'])")
-		    public WebElement confirmLightweightWorldChampionship;
-		    
-		    
-		    
-		
 	public String expEventsPageTitle = "Events";
 	public String eventName;
 	public String publishTeam = "published to the world";
@@ -977,21 +764,18 @@ public class EventsPage extends BaseClass {
 	}
 
 	public void showtypeFilter() throws InterruptedException {
-		actions.waitForElementPresent(show_Type);
+		
 		actions.waitForElementToBeClickable(show_Type);
 		actions.waitForElementToBeClickable(one_Series);
 		
 	}
 
 	public void enterSearchQuery() {
-		searchQuery.sendKeys("Fist");
+		searchQuery.sendKeys("Automation");
 	}
 
-	public void enterStringInEventSearchField(String search) {
-		searchQuery.sendKeys(search);
-	}
 	public void enterSearchQuery1() {
-		searchQuery.sendKeys("Automation9863 27-Aug-21");
+		searchQuery.sendKeys("Automation99 24-Jul-21");
 	}
 	public void searchQuery() {
 		searchQuery.sendKeys(eventName);
@@ -1005,7 +789,7 @@ public class EventsPage extends BaseClass {
 		Format formatter = new SimpleDateFormat("dd-MMM-yy");
 		String s = formatter.format(new Date());
 		addEventBtn.click();
-		eventName = "Automation" + RandomStringUtils.randomNumeric(4) + " " + s;
+		eventName = "Automation" + RandomStringUtils.randomNumeric(2) + " " + s;
 
 		title.sendKeys(eventName);
 	}
@@ -1026,11 +810,6 @@ public class EventsPage extends BaseClass {
 		actions.waitForElementToBeClickable(one_Series);
 	}
 
-	public void eventClosure() throws InterruptedException {
-		actions.waitForElementToBeClickable(eventClosure);
-		actions.waitForElementToBeClickable(one_Series);
-	}
-	
 	public void eventcancel() {
 		actions.waitForElementToBeClickable(eventcancel);
 	}
@@ -1076,7 +855,8 @@ public class EventsPage extends BaseClass {
 	    actions.waitForElementToBeClickable(weightclass);
 	    actions.waitForElementToBeClickable(featherweight);
 		style();
-		enable.click();
+		saveBout();
+		Thread.sleep(3000);
 		
 	}
 
@@ -1091,7 +871,8 @@ public class EventsPage extends BaseClass {
 	    actions.waitForElementToBeClickable(weightclass);
 	    actions.waitForElementToBeClickable(atomweight);
 		style();
-		enable.click();
+		saveBout();
+		Thread.sleep(3000);
 
 	}
 
@@ -1104,11 +885,10 @@ public class EventsPage extends BaseClass {
 	    actions.searchDropdownOptions(athlete2, "Adi");
 	    actions.waitForElementToBeClickable(adiParyanto);
 	    actions.waitForElementToBeClickable(weightclass);
-	    actions.waitForElementToBeClickable(strawweight);
-	    //actions.waitForElementToBeClickable(flyweight);
+	    actions.waitForElementToBeClickable(flyweight);
 		style();
-		enable.click();
-		
+		saveBout();
+		Thread.sleep(3000);
 	}
 
 	public void boutcard4() throws InterruptedException {
@@ -1122,22 +902,6 @@ public class EventsPage extends BaseClass {
 	    actions.waitForElementToBeClickable(weightclass);
 	    actions.waitForElementToBeClickable(strawweight);
 		style();
-		enable.click();
-	}
-
-public void TBA() throws InterruptedException {
-		
-		actions.waitForElementToBeClickable(athlete1);
-		actions.searchDropdownOptions(athlete1, "TBA");
-	    actions.waitForElementToBeClickable(TBA);
-	    TBA.click();
-	    actions.waitForElementToBeClickable(athlete2);
-	    actions.searchDropdownOptions(athlete2, "Adri");
-	    actions.waitForElementToBeClickable(adrianMattheis);
-	    actions.waitForElementToBeClickable(weightclass);
-	    actions.waitForElementToBeClickable(strawweight);
-		style();
-		enable.click();
 		saveBout();
 	}
 
@@ -1173,21 +937,21 @@ public void TBA() throws InterruptedException {
 
 	public void athlete1() throws InterruptedException {
 		actions.waitForElementToBeClickable(athlete1);
-		actions.searchDropdownOptions(athlete1, "Neha");
-	    actions.waitForElementToBeClickable(NehaKashyap);
+		actions.searchDropdownOptions(athlete1, "abro");
+	    actions.waitForElementToBeClickable(abroFernandes);
 	}
 
 	public void athlete2() throws InterruptedException {
 		actions.waitForElementToBeClickable(athlete1);
-		actions.searchDropdownOptions(athlete1,"Stamp");
-	    actions.waitForElementToBeClickable(stampFairtex);
+		actions.searchDropdownOptions(athlete1, "Adib");
+	    actions.waitForElementToBeClickable(adibSulaiman);
 
 	}
 
 	public void athlete3() throws InterruptedException {
 		actions.waitForElementToBeClickable(athlete2);
-		actions.searchDropdownOptions(athlete2, "Asha");
-	    actions.waitForElementToBeClickable(AshaR);
+		actions.searchDropdownOptions(athlete2, "aj");
+	    actions.waitForElementToBeClickable(ajLiasMansor);
 
 	}
 	
@@ -1229,6 +993,7 @@ public void TBA() throws InterruptedException {
 		actions.waitForElementToBeClickable(editBout);
 		actions.waitForElementToBeClickable(selectchampionshipType);	
 		actions.waitForElementToBeClickable(semiFinalFeatherweightWorldGrandPrix);
+		
 
 	}
 
@@ -1274,31 +1039,27 @@ public void TBA() throws InterruptedException {
 
 	}
 
-	public void selecetEventEnclosurecage() throws InterruptedException {
+	public void selecetEventEnclosure() throws InterruptedException {
 		actions.waitForElementToBeClickable(selectEventEnclosure);
 		actions.waitForElementToBeClickable(cage);
+		
+		
+		Thread.sleep(2000);
 
 	}
 
-	public void selecetEventEnclosureRing() throws InterruptedException {
-		actions.waitForElementToBeClickable(cage);
-		actions.waitForElementToBeClickable(Ring);
-
-	}
-	
 	public void saveEventdetails() throws InterruptedException {
 		actions.waitForElementToBeClickable(saveEventEdit);
-		
 	}
 
 	public void editDescriptionClick() throws InterruptedException {
 		description.click();
-		
+		Thread.sleep(3000);
 	}
 
 	public void enterDescription() throws InterruptedException {
 
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[title='Rich Text Area. Press ALT-0 for help.']")));
+		driver.switchTo().frame(0);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2000)");
 		updatedescription.sendKeys(
@@ -1385,7 +1146,7 @@ public void TBA() throws InterruptedException {
 	}
 
 	public void hideEvent() {
-		hideEvent.click();
+		actions.waitForElementToBeClickable(hideEvent);
 	}
 
 	public void displayBout() {
@@ -1425,62 +1186,6 @@ public void TBA() throws InterruptedException {
 		actions.waitForElementPresent(confirmBtn);
 		confirmBtn.click();
 
-	}
-	
-	public void publishToWorld() {
-		actions.waitForElementPresent(publishToWorld);
-		actions.waitForElementToBeClickable(publishToWorld);
-		actions.waitForElementPresent(confirmBtn);
-		confirmBtn.click();
-
-	}
-	
-	public void yearFilter() throws InterruptedException {
-		
-		actions.waitForElementToBeClickable(year);
-		actions.waitForElementToBeClickable(year2019);
-	}
-
-	public void BR() {
-		actions.waitForElementToBeClickable(tags);
-		actions.waitForElementToBeClickable(BR);
-		
-	}
-
-	public void Regular() {
-		actions.waitForElementToBeClickable(tags);
-		actions.waitForElementToBeClickable(Regular); 
-	}
-	public void TNT() {
-		actions.waitForElementToBeClickable(tags);
-		actions.waitForElementToBeClickable(TNT);
-		  
-	}
-	
-	public void englishlocale() throws InterruptedException {
-		actions.waitForElementToBeClickable(localeselection);
-		actions.waitForElementToBeClickable(englishLocale);
-	}
-
-	public void hindilocale() throws InterruptedException {
-		actions.waitForElementToBeClickable(localeselection);
-		actions.waitForElementToBeClickable(hindiLocale);
-	}
-
-	public void bahasalocale() throws InterruptedException {
-		actions.waitForElementToBeClickable(localeselection);
-		actions.waitForElementToBeClickable(bahasaLocale);
-	}
-
-	public void khmerlocale() throws InterruptedException {
-		actions.waitForElementToBeClickable(localeselection);
-		actions.waitForElementToBeClickable(khmerLocale);
-	}
-
-	public String verifyConfirmationPopupForSave() {
-		actions.waitForElementPresent(confirmationPopupTextForEventDeletion);
-		String updatedText = confirmationPopupTextForEventDeletion.getText();
-		return updatedText;
 	}
 
 
